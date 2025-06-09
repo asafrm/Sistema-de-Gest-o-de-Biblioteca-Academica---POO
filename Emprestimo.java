@@ -32,12 +32,7 @@ public class Emprestimo {
                     LocalDate dataEmprestimo = LocalDate.now();
                     LocalDate dataDevolucao = dataEmprestimo.plusDays(15);
                     livro.setDisponivel(false);
-
-                    System.out.println();
-                    System.out.println("Livro " + livro.getTitulo() + ", emprestado com sucesso!");
-                    System.out.println("O livro deve ser devolvido no dia: " + dataDevolucao);
-                    System.out.println();
-
+                    
                     System.out.println("Digite o número de matricula do usuário que vai pegar o livro: ");
                     int matricula = sc.nextInt();
                     sc.nextLine();
@@ -49,7 +44,12 @@ public class Emprestimo {
                             break;
                         }
                     }
-
+                    
+                    System.out.println();
+                    System.out.println("Livro " + livro.getTitulo() + ", emprestado para com sucesso!");
+                    System.out.println("O livro deve ser devolvido no dia: " + dataDevolucao);
+                    System.out.println();
+                    
                     if (usuarioEmprestimo != null){
                         // Incrementa o id antes de usar, visando garantir que cada id seja unicoo
                         int idEmprestimo = proximoIdEmprestimo++;
@@ -59,6 +59,7 @@ public class Emprestimo {
                         emprestimos.add(novoEmprestimo);
 
                         System.out.println("Empréstimo registrado com ID: " + idEmprestimo);
+                        
                     } else {
                         System.out.println("Erro: Usuário com número de matricula " + matricula + " não encontrado. Empréstimo não registrado.");
                         livro.setDisponivel(true); // se o usuario não for encontrado, torna o livro disponível paraa empréstimo novamente
