@@ -4,25 +4,24 @@ public class Usuario {
     private String nome;
     private String cpf;
     private String email;
-    private TipoUsuario tipo;
+    private TipoUsuario tipoUsuario;
 
-    public Usuario(int matricula, String nome, String cpf, String email, TipoUsuario tipo) {
+    public Usuario(int matricula, String nome, String cpf, String email, TipoUsuario tipoUsuario) {
         this.matricula = matricula;
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
-        this.tipo = tipo;
+        this.tipoUsuario = tipoUsuario;
     }
 
-    public TipoUsuario getTipo() {
-        return tipo;
+    public TipoUsuario getTipoUsuario() {
+        return tipoUsuario;
     }
 
     public enum TipoUsuario {
         PROFESSOR,
         ALUNO
     }
-
 
     public int getMatricula() {
         return matricula;
