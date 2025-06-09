@@ -85,6 +85,17 @@ public class Livro {
         System.out.println();
     }
 
+    //OPCAO 4 Funcao que busca um livro
+    public static Livro buscarLivros(List<Livro> livros, int isbn) {
+        // Percorre a lista de livros
+        for (Livro livro : livros) {
+            // Verifica se o ISBN do livro atual é igual ao ISBN procurado
+            if (livro.getIsbn() == isbn) {
+                return livro; // Retorna o livro assim que o encontra
+            }
+        }
+        return null; // Se o loop terminar e o livro não for encontrado, retorna null
+    }
 
     // Getters e Setters
     public int getIsbn() {
